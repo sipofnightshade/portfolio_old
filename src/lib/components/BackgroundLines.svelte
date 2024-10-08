@@ -1,7 +1,9 @@
 <script lang="ts">
 </script>
 
-<div class="bg_lines absolute left-0 top-0 -z-10 h-full w-full"></div>
+<div
+  class="bg_lines absolute left-0 top-0 -z-10 h-full w-full border-x border-gray-200"
+></div>
 
 <style lang="postcss">
   .bg_lines {
