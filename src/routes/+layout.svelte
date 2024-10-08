@@ -1,5 +1,9 @@
 <script>
-	import '../app.css';
+  import '../app.css';
+
+  let { children } = $props();
 </script>
 
-<slot></slot>
+<div class="container relative mx-auto w-screen">
+  {@render children()}
+</div>

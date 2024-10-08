@@ -1,2 +1,10 @@
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
+<script lang="ts">
+  import BackgroundLines from '$lib/components/BackgroundLines.svelte';
+  import Navbar from '$lib/components/Navbar.svelte';
+</script>
+
+<div class="bg_lines relative h-[90svh] border-x border-gray-200">
+  <BackgroundLines />
+
+  <Navbar />
+</div>
