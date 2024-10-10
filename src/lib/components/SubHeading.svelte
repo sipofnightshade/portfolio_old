@@ -4,7 +4,7 @@
 
 <div class="flex flex-col gap-2">
   <h2
-    class="text-9xl font-bold leading-tight"
+    class="text-9xl font-semibold leading-tight"
     class:text-gray-200={dark}
     class:text-black={!dark}
   >
@@ -17,7 +17,7 @@
       class:bg-black={!dark}
     ></div>
     <p
-      class="max-w-80 font-mono text-lg font-bold leading-snug"
+      class="max-w-80 font-mono text-lg font-bold leading-snug tracking-tighter"
       class:text-gray-400={dark}
       class:text-black={!dark}
     >
