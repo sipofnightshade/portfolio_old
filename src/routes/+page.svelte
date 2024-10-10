@@ -1,5 +1,7 @@
 <script lang="ts">
+  import Footer from '../lib/components/Footer.svelte';
   import BackgroundLines from '$lib/components/BackgroundLines.svelte';
+  import ContactForm from '$lib/components/ContactForm.svelte';
   import HeroHeader from '$lib/components/HeroHeader.svelte';
   import Navbar from '$lib/components/Navbar.svelte';
   import SubHeading from '$lib/components/SubHeading.svelte';
@@ -15,7 +17,7 @@
 </section>
 
 <!-- about -->
-<section class="h-[104svh] bg-black">
+<section class="h-screen bg-neutral-950">
   <div class="container mx-auto grid h-full grid-cols-2 gap-2 py-40">
     <SubHeading title="about." desc="Just some short notes about myself and my goals." />
     <div class="text-4xl font-bold leading-snug text-gray-200">
@@ -34,7 +36,7 @@
 </section>
 
 <!-- work -->
-<section class="h-[102svh]">
+<section class="h-screen">
   <div class="container relative mx-auto grid h-full grid-cols-2 gap-2">
     <BackgroundLines />
     <div class="flex flex-col justify-between pb-20 pt-40">
@@ -63,11 +65,33 @@
 
         <a
           href="/"
-          class="flex h-24 w-24 items-center justify-center bg-brand transition-colors duration-300 hover:bg-black"
+          class="flex h-24 w-24 items-center justify-center bg-brand transition-colors duration-300 hover:bg-neutral-950"
         >
           <Link classes="h-12 w-12" />
         </a>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- orange -->
+<section class="h-screen bg-brand">
+  <div class="container mx-auto flex h-full flex-col justify-center">
+    <div class="font-bold">
+      <p class="text-8xl leading-tight">
+        Okay, that's enough about me. It's time to talk about you. Got a project in mind?
+        Let's bring it to life together!
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="h-screen bg-neutral-950">
+  <div class="container mx-auto flex h-full flex-col justify-between pb-0 pt-40">
+    <div class="grid h-full grid-cols-2 gap-2">
+      <SubHeading title="contact." desc="Let's get to work!" />
+      <ContactForm />
+    </div>
+    <Footer />
   </div>
 </section>
