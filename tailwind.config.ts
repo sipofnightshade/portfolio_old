@@ -4,6 +4,11 @@ export default {
 	content: ['./src/**/*.{html,js,svelte,ts}'],
 
 	theme: {
+		fontFamily: {
+		'sans': ['Onest Variable', 'sans-serif'],
+		'mono': ['Overpass Mono Variable', 'sans-serif']
+		
+		},
 		extend: {
 			colors:{
 				brand:'#FF3E00',
