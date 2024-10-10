@@ -4,11 +4,11 @@
 
 {#if dark}
   <div
-    class="bg_lines_dark absolute left-0 top-0 -z-10 h-full w-full border-x border-zinc-900"
+    class="bg_lines_dark absolute left-0 top-0 -z-10 h-full w-full border-x border-neutral-900"
   ></div>
 {:else}
   <div
-    class="bg_lines_light absolute left-0 top-0 -z-10 h-full w-full border-x border-gray-200"
+    class="bg_lines_light absolute left-0 top-0 -z-10 h-full w-full border-x border-neutral-200"
   ></div>
 {/if}
 
@@ -16,7 +16,7 @@
   .bg_lines_light {
     --w: 1px; /* Thiclness of the line */
     --n: 3; /* number of lines */
-    --c: theme(colors.gray.200);
+    --c: theme(colors.neutral.200);
 
     background: linear-gradient(90deg, #0000 calc(100% - var(--w)), var(--c) 0);
     background-size: calc(
@@ -28,7 +28,7 @@
   .bg_lines_dark {
     --w: 1px; /* Thiclness of the line */
     --n: 3; /* number of lines */
-    --c: theme(colors.zinc.900);
+    --c: theme(colors.neutral.900);
 
     background: linear-gradient(90deg, #0000 calc(100% - var(--w)), var(--c) 0);
     background-size: calc(
