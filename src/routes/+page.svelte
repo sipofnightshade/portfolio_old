@@ -57,7 +57,7 @@
       <div class="flex items-end justify-between">
         <div class="flex flex-col gap-4">
           <h3 class="text-4xl font-bold">Project Name</h3>
-          <p class="max-w-lg font-mono tracking-tight">
+          <p class="max-w-lg leading-relaxed">
             Lorem ipsum dolar di datta sen ran truest balen. Anre saj qeor ail ander vol
             ajut ambrosi dannil an cuoi.
           </p>
