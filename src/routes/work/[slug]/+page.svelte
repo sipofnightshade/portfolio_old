@@ -16,9 +16,11 @@
   <Navbar />
 
   <div class="relative mt-10 space-y-4">
-    <h1 class="relative -left-1 text-8xl font-bold lowercase">{data.project.name}</h1>
+    <h1 class="relative -left-1 text-8xl font-bold lowercase leading-none">
+      {data.project.name}
+    </h1>
     <div class="grid grid-cols-4 gap-2">
-      <p class="col-span-2 text-2xl">{data.project.description}</p>
+      <p class="col-span-2 text-3xl text-zinc-500">{data.project.description}</p>
       <!-- this is a placeholder item -->
       <div class=""></div>
       <!-- this is a placeholder item -->
@@ -39,11 +41,9 @@
   {#snippet stats(label: string, values: string[] | string)}
     <div class="flex flex-col gap-1 capitalize">
       <h3 class="text-xl font-bold">{label}</h3>
-      {#if typeof values === 'string'}
-        <p class="font-mono tracking-tighter">{values}</p>
-      {:else}
-        <p class="font-mono tracking-tighter">{values.join(', ')}</p>
-      {/if}
+      <p class="font-mono font-bold tracking-tighter text-zinc-500">
+        {typeof values === 'string' ? values : values.join(', ')}
+      </p>
     </div>
   {/snippet}
 
@@ -64,4 +64,27 @@
 
 <section class="h-screen bg-neutral-950">
   <!-- image goes here -->
+</section>
+
+<section class="container relative mx-auto h-screen">
+  <BackgroundLines />
+  <div class="grid h-full grid-cols-4 gap-2">
+    <div class="col-span-3 flex h-full flex-col justify-center gap-4">
+      <h2 class="text-7xl font-bold lowercase leading-none">Making it responsive</h2>
+
+      <div class="max-w-[760px] border-l-4 border-brand pl-4">
+        <p class="font-mono text-lg font-bold leading-snug tracking-tighter text-brand">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias, porro
+          suscipit reprehenderit tempore vel explicabo sequi.
+        </p>
+      </div>
+
+      <p class="mt-4 text-4xl leading-snug text-zinc-600">
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Praesentium tenetur
+        temporibus reiciendis tempore vero, sunt magnam ab ratione laboriosam, obcaecati
+        error optio itaque nemo, doloribus et dicta. Accusantium in debitis iste, saepe
+        amet, quae quam enim asperiores recusandae assumenda dolores.
+      </p>
+    </div>
+  </div>
 </section>
