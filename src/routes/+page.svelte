@@ -1,4 +1,5 @@
 <script lang="ts">
+  import type { PageData } from './$types';
   import Footer from '../lib/components/Footer.svelte';
   import BackgroundLines from '$lib/components/BackgroundLines.svelte';
   import ContactForm from '$lib/components/ContactForm.svelte';
@@ -6,6 +7,13 @@
   import Navbar from '$lib/components/Navbar.svelte';
   import SubHeading from '$lib/components/SubHeading.svelte';
   import Link from '$lib/icons/Link.svelte';
+
+  interface Props {
+    data: PageData;
+  }
+  let { data }: Props = $props();
+
+  $inspect(data.projects);
 </script>
 
 <section
