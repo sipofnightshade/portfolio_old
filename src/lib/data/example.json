@@ -3,6 +3,7 @@
   "name": "Project123",
   "description": "A cutting-edge e-commerce platform designed to revolutionize online shopping.",
   "client": "Acme Corporation",
+  "industry": "Gaming",
   "uri": "project123",
   "liveUrl": "https://project123.com",
   "repository": "https://github.com/user/project123",
