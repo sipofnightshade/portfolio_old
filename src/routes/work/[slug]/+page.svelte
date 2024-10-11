@@ -5,8 +5,6 @@
   import Link from '$lib/icons/Link.svelte';
 
   let { data }: { data: PageData } = $props();
-
-  $inspect(data.project);
 </script>
 
 <section

@@ -12,8 +12,6 @@
     data: PageData;
   }
   let { data }: Props = $props();
-
-  $inspect(data.projects);
 </script>
 
 <section

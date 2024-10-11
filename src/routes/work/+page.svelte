@@ -6,8 +6,6 @@
   }
 
   let { data }: Props = $props();
-
-  $inspect(data.projects);
 </script>
 
 <h1>This is a list of my work!</h1>
