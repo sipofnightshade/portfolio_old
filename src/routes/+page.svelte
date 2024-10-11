@@ -75,7 +75,7 @@
           href="/"
           class="flex h-24 w-24 items-center justify-center bg-brand transition-colors duration-300 hover:bg-neutral-950"
         >
-          <Link classes="h-12 w-12" />
+          <Link classes="h-12 w-12 text-white" />
         </a>
       </div>
     </div>
