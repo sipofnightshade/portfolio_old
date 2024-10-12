@@ -5,12 +5,12 @@
     gsap.to('.testing', {
       y: 0,
       duration: 1,
-      stagger: 0.2
+      stagger: 0.15
     });
   });
 </script>
 
-<h1 class=" w-full flex-col pb-16 text-[16rem] leading-none">
+<h1 class=" mb-12 w-full flex-col text-[16rem] leading-none">
   <strong
     class="relative -left-1 flex w-full justify-between gap-6 font-semibold tracking-tighter"
   >
