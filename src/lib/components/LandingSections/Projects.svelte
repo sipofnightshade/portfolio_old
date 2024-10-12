@@ -33,9 +33,10 @@
           ease: 'power2.out',
           scrollTrigger: {
             trigger: panel,
-            start: 'top 90%', // Animation starts when the panel is 80% from the top
+            start: 'top bottom', // Animation starts when the panel is 80% from the top
             end: 'top 20%', // Ends when the panel is 20% from the top
-            scrub: true, // Smooth scrubbing
+            scrub: 1, // Smooth scrubbing
+            // markers: true,
             onEnter: () => {
               // Prevent incrementing if the panel index is higher than totalPanels
               if (currentPanel !== index + 1 && index + 1 <= totalPanels) {
@@ -56,7 +57,7 @@
 </script>
 
 {#snippet Panel(data: string)}
-  <div class="panel my-12 flex translate-y-60 flex-col gap-6">
+  <div class="panel my-12 flex translate-y-44 flex-col gap-6">
     <!-- image here -->
     <div class="aspect-[4/3] bg-gray-200"></div>
 
