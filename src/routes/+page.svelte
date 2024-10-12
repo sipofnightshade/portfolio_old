@@ -22,8 +22,6 @@
 
   // Effect for tying GSAP and Lenis together
   $effect(() => {
-    gsap.registerPlugin(ScrollTrigger);
-
     // Use GSAP's ticker for Lenis updates instead of autoRaf
     function update(time: number) {
       lenis?.raf(time * 950);
@@ -34,6 +32,19 @@
     return () => {
       gsap.ticker.remove(update);
     };
+  });
+
+  // Effect for scroll trigger animations
+  $effect(() => {
+    gsap.registerPlugin(ScrollTrigger);
+
+    ScrollTrigger.create({
+      trigger: '#work',
+      start: 'top top',
+      end: 'bottom bottom',
+      scrub: true,
+      pin: '#ftLeft'
+    });
   });
 </script>
 
@@ -73,10 +84,10 @@
   </section>
 
   <!-- work -->
-  <section class="h-screen">
+  <section id="work">
     <div class="container relative mx-auto grid h-full grid-cols-2 gap-2">
       <BackgroundLines />
-      <div class="flex flex-col justify-between pb-20 pt-40">
+      <div id="ftLeft" class="flex h-screen flex-col justify-between pb-20 pt-40">
         <SubHeading
           title="work."
           dark={false}
@@ -87,25 +98,70 @@
           <strong class="text-5xl">/5</strong>
         </p>
       </div>
-      <div class="flex flex-col gap-8 py-20">
-        <!-- image here -->
-        <div class="aspect-[4/3] bg-gray-200"></div>
+      <!-- right side -->
+      <div id="ftRight">
+        <div class="flex flex-col gap-8 py-20">
+          <!-- image here -->
+          <div class="aspect-[4/3] bg-gray-200"></div>
 
-        <div class="flex items-end justify-between">
-          <div class="flex flex-col gap-4">
-            <h3 class="text-4xl font-bold">Project Name</h3>
-            <p class="max-w-lg leading-relaxed">
-              Lorem ipsum dolar di datta sen ran truest balen. Anre saj qeor ail ander vol
-              ajut ambrosi dannil an cuoi.
-            </p>
+          <div class="flex items-end justify-between">
+            <div class="flex flex-col gap-4">
+              <h3 class="text-4xl font-bold">Project Name</h3>
+              <p class="max-w-lg leading-relaxed">
+                Lorem ipsum dolar di datta sen ran truest balen. Anre saj qeor ail ander
+                vol ajut ambrosi dannil an cuoi.
+              </p>
+            </div>
+
+            <a
+              href="/"
+              class="flex h-24 w-24 items-center justify-center bg-brand transition-colors duration-300 hover:bg-neutral-950"
+            >
+              <Link classes="h-12 w-12 text-white" />
+            </a>
           </div>
+        </div>
+        <div class="flex flex-col gap-8 py-20">
+          <!-- image here -->
+          <div class="aspect-[4/3] bg-gray-200"></div>
 
-          <a
-            href="/"
-            class="flex h-24 w-24 items-center justify-center bg-brand transition-colors duration-300 hover:bg-neutral-950"
-          >
-            <Link classes="h-12 w-12 text-white" />
-          </a>
+          <div class="flex items-end justify-between">
+            <div class="flex flex-col gap-4">
+              <h3 class="text-4xl font-bold">Project Name</h3>
+              <p class="max-w-lg leading-relaxed">
+                Lorem ipsum dolar di datta sen ran truest balen. Anre saj qeor ail ander
+                vol ajut ambrosi dannil an cuoi.
+              </p>
+            </div>
+
+            <a
+              href="/"
+              class="flex h-24 w-24 items-center justify-center bg-brand transition-colors duration-300 hover:bg-neutral-950"
+            >
+              <Link classes="h-12 w-12 text-white" />
+            </a>
+          </div>
+        </div>
+        <div class="flex flex-col gap-8 py-20">
+          <!-- image here -->
+          <div class="aspect-[4/3] bg-gray-200"></div>
+
+          <div class="flex items-end justify-between">
+            <div class="flex flex-col gap-4">
+              <h3 class="text-4xl font-bold">Project Name</h3>
+              <p class="max-w-lg leading-relaxed">
+                Lorem ipsum dolar di datta sen ran truest balen. Anre saj qeor ail ander
+                vol ajut ambrosi dannil an cuoi.
+              </p>
+            </div>
+
+            <a
+              href="/"
+              class="flex h-24 w-24 items-center justify-center bg-brand transition-colors duration-300 hover:bg-neutral-950"
+            >
+              <Link classes="h-12 w-12 text-white" />
+            </a>
+          </div>
         </div>
       </div>
     </div>
