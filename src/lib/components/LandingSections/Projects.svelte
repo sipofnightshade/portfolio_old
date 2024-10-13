@@ -4,9 +4,11 @@
   import Link from '$lib/icons/Link.svelte';
   import BackgroundLines from '../BackgroundLines.svelte';
   import SubHeading from '../SubHeading.svelte';
+  import { tweened } from 'svelte/motion';
 
-  let currentPanel = $state(0);
-  let totalPanels = $state(5);
+  let currentPanel: number = $state(0);
+  let totalPanels: number = $state(5);
+  let progressBar: HTMLDivElement | null = $state(null);
 
   // Effect for scroll trigger animations
   $effect(() => {
@@ -19,9 +21,15 @@
         start: 'top top',
         end: 'bottom bottom',
         scrub: true,
-        pin: '#ftLeft'
-        // use this for the progress bar of the page
-        // onUpdate: (self) => console.log('progress:', self.progress)
+        pin: '.ftLeft',
+        onUpdate: (self) => {
+          // Animate the height of the progress bar smoothly
+          gsap.to(progressBar, {
+            height: `${self.progress * 100}%`, // Animate height to match progress
+            duration: 0.3, // Smooth transition duration
+            ease: 'power1.out' // Smooth easing function
+          });
+        }
       });
 
       // Create animations for each panel
@@ -80,10 +88,15 @@
   </div>
 {/snippet}
 
-<section id="work">
+<section id="work" class="relative">
+  <!-- progress bar  -->
+  <div class="ftLeft absolute left-0 top-0 h-screen w-1.5 bg-zinc-300">
+    <div bind:this={progressBar} class="w-full bg-brand"></div>
+  </div>
+  <!-- progress bar  -->
   <div class="container relative mx-auto grid h-full grid-cols-2 gap-2">
     <BackgroundLines />
-    <div id="ftLeft" class="flex h-screen flex-col justify-between pb-20 pt-40">
+    <div class="ftLeft flex h-screen flex-col justify-between pb-20 pt-40">
       <SubHeading
         title="work."
         dark={false}
