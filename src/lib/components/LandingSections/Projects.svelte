@@ -122,7 +122,7 @@
       </p>
     </div>
     <!-- right side -->
-    <div id="ftRight" class="flex h-full flex-col gap-10 py-16">
+    <div id="ftRight" class="flex h-full flex-col gap-10 pb-16 pt-24">
       {@render Panel('Project One')}
       {@render Panel('Project Two')}
       {@render Panel('Project Three')}
