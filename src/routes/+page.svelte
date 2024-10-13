@@ -13,6 +13,9 @@
   import { ScrollContainer, type OnSetup, type Lenis } from '$lib/components/LenisScroll';
   import Projects from '$lib/components/LandingSections/Projects.svelte';
   import About from '$lib/components/LandingSections/About.svelte';
+  import Hero from '$lib/components/LandingSections/Hero.svelte';
+  import Pitch from '$lib/components/LandingSections/Pitch.svelte';
+  import Contact from '$lib/components/LandingSections/Contact.svelte';
 
   let { data }: { data: PageData } = $props();
 
@@ -42,39 +45,13 @@
   root
   options={{ smoothWheel: true, orientation: 'vertical', lerp: 0.1 }}
 >
-  <section
-    class="container relative mx-auto flex h-[92svh] w-screen flex-col justify-between"
-  >
-    <BackgroundLines />
-    <Navbar />
-    <HeroHeader />
-  </section>
+  <Hero class="z-10 bg-zinc-50" />
 
-  <!-- about -->
-  <About />
+  <About class="h-[108vh] bg-neutral-950 text-gray-200" />
 
-  <!-- work -->
-  <Projects />
+  <Projects class="z-10 bg-white" />
 
-  <!-- orange -->
-  <section class="h-screen bg-brand">
-    <div class="container mx-auto flex h-full flex-col justify-center">
-      <div class="font-bold">
-        <p class="text-8xl leading-tight">
-          Okay, that's enough about me. It's time to talk about you. Got a project in
-          mind? Let's bring it to life together!
-        </p>
-      </div>
-    </div>
-  </section>
+  <Pitch class="z-10 bg-brand" />
 
-  <section class="h-screen bg-neutral-950">
-    <div class="container mx-auto flex h-full flex-col justify-between pb-0 pt-40">
-      <div class="grid h-full grid-cols-2 gap-2">
-        <SubHeading title="contact." desc="Let's get to work!" />
-        <ContactForm />
-      </div>
-      <Footer />
-    </div>
-  </section>
+  <Contact class="bg-neutral-950" />
 </ScrollContainer>

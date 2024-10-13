@@ -8,6 +8,6 @@
   let { children }: { children: Snippet } = $props();
 </script>
 
-<div class="text-black">
+<div class="bg-zinc-50 text-black">
   {@render children()}
 </div>

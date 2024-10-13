@@ -5,6 +5,11 @@
   import BackgroundLines from '../BackgroundLines.svelte';
   import SubHeading from '../SubHeading.svelte';
 
+  interface Props {
+    class?: string;
+  }
+  let { class: className }: Props = $props();
+
   let currentPanel: number = $state(0);
   let totalPanels: number = $state(5);
   let progressBar: HTMLDivElement | null = $state(null);
@@ -97,7 +102,7 @@
   </div>
 {/snippet}
 
-<section id="work" class="relative">
+<section id="work" class="relative {className}">
   <!-- progress bar  -->
   <div id="progressBar" class="absolute left-0 top-0 h-screen w-1.5 bg-zinc-300">
     <div bind:this={progressBar} class="w-full bg-brand"></div>
