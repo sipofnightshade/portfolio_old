@@ -4,7 +4,6 @@
   import Link from '$lib/icons/Link.svelte';
   import BackgroundLines from '../BackgroundLines.svelte';
   import SubHeading from '../SubHeading.svelte';
-  import { tweened } from 'svelte/motion';
 
   let currentPanel: number = $state(0);
   let totalPanels: number = $state(5);
@@ -16,12 +15,22 @@
     let mm = gsap.matchMedia();
 
     mm.add('(min-width: 768px)', () => {
+      // Pin the sidebar (#ftLeft) and manage panel animations
       ScrollTrigger.create({
         trigger: '#work',
         start: 'top top',
         end: 'bottom bottom',
         scrub: true,
-        pin: '.ftLeft',
+        pin: '#ftLeft' // Pinning the sidebar
+      });
+
+      // Animate the progress bar (fixed to the left edge)
+      ScrollTrigger.create({
+        trigger: '#work',
+        start: 'top top',
+        end: 'bottom bottom',
+        scrub: true,
+        pin: '#progressBar', // Pinning the sidebar
         onUpdate: (self) => {
           // Animate the height of the progress bar smoothly
           gsap.to(progressBar, {
@@ -90,13 +99,13 @@
 
 <section id="work" class="relative">
   <!-- progress bar  -->
-  <div class="ftLeft absolute left-0 top-0 h-screen w-1.5 bg-zinc-300">
+  <div id="progressBar" class="absolute left-0 top-0 h-screen w-1.5 bg-zinc-300">
     <div bind:this={progressBar} class="w-full bg-brand"></div>
   </div>
   <!-- progress bar  -->
   <div class="container relative mx-auto grid h-full grid-cols-2 gap-2">
     <BackgroundLines />
-    <div class="ftLeft flex h-screen flex-col justify-between pb-20 pt-40">
+    <div id="ftLeft" class="flex h-screen flex-col justify-between pb-20 pt-40">
       <SubHeading
         title="work."
         dark={false}
