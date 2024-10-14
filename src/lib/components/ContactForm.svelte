@@ -1,14 +1,24 @@
 <script lang="ts">
-  let inputClass =
+  const inputClass =
     'w-full appearance-none border-0 border-b-2 border-brand bg-transparent px-0 py-2.5 text-3xl text-zinc-900 transition-colors duration-500 placeholder:text-zinc-500 hover:border-brand-dark focus:border-brand focus:outline-none focus:ring-0 dark:border-zinc-600 dark:text-neutral-200 dark:focus:border-brand';
+
+  let name = $state('');
+  let company = $state('');
+  let email = $state('');
+  let details = $state('');
+
+  let allowSubmit = $derived(name && company && email && details);
+
+  $inspect('allowSubmit', allowSubmit);
 </script>
 
 <form action="" class="flex flex-col gap-14">
   <!-- name -->
   <input
-    type="name"
-    name="floating_name"
-    id="floating_name"
+    type="text"
+    name="name"
+    id="name"
+    bind:value={name}
     class={inputClass}
     placeholder="Name"
     required
@@ -16,9 +26,10 @@
 
   <!-- company -->
   <input
-    type="company"
-    name="floating_company"
-    id="floating_company"
+    type="text"
+    name="company"
+    id="company"
+    bind:value={company}
     class={inputClass}
     placeholder="Company"
     required
@@ -27,8 +38,9 @@
   <!-- email -->
   <input
     type="email"
-    name="floating_email"
-    id="floating_email"
+    name="email"
+    id="email"
+    bind:value={email}
     class={inputClass}
     placeholder="Email"
     required
@@ -36,8 +48,9 @@
 
   <!-- details -->
   <textarea
-    name="floating_details"
-    id="floating_details"
+    name="details"
+    id="details"
+    bind:value={details}
     class={inputClass}
     placeholder="What are we working on?"
     required
@@ -46,9 +59,10 @@
   <!-- submit -->
   <button
     type="submit"
-    class="flex h-20 w-60 items-center justify-center rounded-full text-3xl leading-none"
-    class:bg-brand={false}
-    class:bg-neutral-700={true}
+    class="flex h-20 w-60 items-center justify-center rounded-full text-3xl leading-none transition-colors"
+    class:bg-brand={allowSubmit}
+    class:bg-neutral-700={!allowSubmit}
+    disabled={!allowSubmit}
   >
     Submit
   </button>
