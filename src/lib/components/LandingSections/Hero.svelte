@@ -11,7 +11,7 @@
 
 <section class="relative {className}">
   <div
-    class="container relative mx-auto flex h-[92svh] w-screen flex-col justify-between"
+    class="container relative mx-auto flex h-[90svh] w-screen flex-col justify-between"
   >
     <BackgroundLines />
     <Navbar />

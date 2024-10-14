@@ -12,7 +12,7 @@
 
 <h1 class="mb-12 w-full flex-col text-[16rem] leading-none">
   <strong
-    class="relative -left-1 flex w-full justify-between gap-6 font-semibold tracking-tighter"
+    class="relative -left-1 flex w-full justify-between gap-6 font-semibold tracking-[-0.08em]"
   >
     <span class="testing relative -left-3.5 translate-y-80 font-mono">developer</span>
   </strong>
