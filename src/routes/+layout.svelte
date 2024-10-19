@@ -1,7 +1,6 @@
 <script lang="ts">
   import '../app.css';
-  import '@fontsource-variable/overpass-mono';
-  import '@fontsource-variable/onest';
+  import '@fontsource-variable/plus-jakarta-sans';
   import 'lenis/dist/lenis.css';
   import { gsap } from 'gsap';
   import { ScrollContainer, type OnSetup, type Lenis } from '$lib/components/LenisScroll';
