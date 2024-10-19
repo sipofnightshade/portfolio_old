@@ -5,7 +5,7 @@ export default {
 
   theme: {
     fontFamily: {
-      sans: ['Plus Jakarta Sans Variable', 'sans-serif']
+      sans: ['Onest Variable', 'sans-serif']
     },
     extend: {
       colors: {

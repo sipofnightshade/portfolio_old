@@ -1,6 +1,6 @@
 <script lang="ts">
   import '../app.css';
-  import '@fontsource-variable/plus-jakarta-sans';
+  import '@fontsource-variable/onest';
   import 'lenis/dist/lenis.css';
   import { gsap } from 'gsap';
   import { ScrollContainer, type OnSetup, type Lenis } from '$lib/components/LenisScroll';
@@ -29,7 +29,7 @@
   });
 </script>
 
-<div class="bg-zinc-50 text-black">
+<div class="bg-gradient-to-br from-[#FDFBFB] to-[#EBEDEE] text-black">
   <ScrollContainer
     {onSetup}
     root
