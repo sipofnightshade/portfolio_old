@@ -83,7 +83,7 @@
     <!-- image here -->
     <div class="aspect-[4/3] bg-gray-200"></div>
 
-    <div class="flex items-end justify-between">
+    <div class="flex items-end justify-between pl-4">
       <h3 class="text-2xl font-bold">{data}</h3>
 
       <a
@@ -120,9 +120,9 @@
     <!-- right side -->
     <div
       id="ftRight"
-      class="relative flex h-full flex-col gap-10 border-x border-zinc-200 pb-16 pt-24"
+      class="relative flex h-full flex-col gap-10 border-x border-zinc-400 pb-16 pt-24"
     >
-      <CornerEdges class="h-2" strokeWidth={20} />
+      <!-- <CornerEdges class="h-2" strokeWidth={20} /> -->
 
       {@render Panel('Project One')}
       {@render Panel('Project Two')}
