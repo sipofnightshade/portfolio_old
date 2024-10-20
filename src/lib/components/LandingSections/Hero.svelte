@@ -1,5 +1,4 @@
 <script lang="ts">
-  import BackgroundLines from '../BackgroundLines.svelte';
   import HeroHeader from '../HeroHeader.svelte';
   import Navbar from '../Navbar.svelte';
 
@@ -10,10 +9,7 @@
 </script>
 
 <section class="relative {className}">
-  <div
-    class="container relative mx-auto flex h-[90svh] w-screen flex-col justify-between"
-  >
-    <BackgroundLines />
+  <div class="container relative mx-auto flex h-screen w-screen flex-col justify-between">
     <Navbar />
     <HeroHeader />
   </div>
