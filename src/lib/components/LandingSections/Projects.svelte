@@ -79,18 +79,20 @@
 </script>
 
 {#snippet Panel(data: string)}
-  <div class="panel my-12 flex translate-y-44 flex-col gap-6">
+  <div class="panel my-12 flex translate-y-44 flex-col gap-3">
     <!-- image here -->
     <div class="aspect-[4/3] bg-gray-200"></div>
 
     <div class="flex items-end justify-between">
-      <h3 class="text-3xl font-bold">{data}</h3>
+      <h3 class="text-2xl font-bold">{data}</h3>
 
       <a
         href="/"
-        class="flex h-16 w-16 items-center justify-center bg-brand transition-colors duration-300 hover:bg-neutral-950"
+        class="group flex h-14 w-14 items-center justify-center bg-zinc-300 duration-300 hover:bg-brand"
       >
-        <Link classes="h-8 w-8 text-white" />
+        <Link
+          classes="h-5 w-5 text-black rotate-45 group-hover:rotate-0 transition-transform"
+        />
       </a>
     </div>
   </div>
