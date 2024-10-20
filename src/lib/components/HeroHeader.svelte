@@ -1,6 +1,7 @@
 <script lang="ts">
   import { Diamond, Pentagon, Triangle } from '$lib/icons';
   import { gsap } from 'gsap';
+  import CornerEdges from './CornerEdges.svelte';
 
   $effect(() => {
     gsap.to('.testing', {
@@ -34,23 +35,21 @@
         aria-labelledby="svg button"
         class="borer-2 relative flex h-24 w-24 items-center justify-center border-black bg-black"
       >
-        <div class="corner-border absolute -z-10 h-full w-full"></div>
-
+        <CornerEdges />
         <Diamond class="h-14 fill-none stroke-zinc-100" />
       </button>
       <button
         aria-labelledby="svg button"
         class="bordr-2 relative flex h-24 w-24 items-center justify-center border-black bg-brand"
       >
-        <div class="corner-border absolute -z-10 h-full w-full"></div>
-
+        <CornerEdges />
         <Pentagon class="h-14 fill-none stroke-black" />
       </button>
       <button
         aria-labelledby="svg button"
         class="bordr-2 relative flex h-24 w-24 items-center justify-center border-black"
       >
-        <div class="corner-border absolute -z-10 h-full w-full"></div>
+        <CornerEdges />
         <Triangle class="h-[3.25rem] fill-none stroke-black" />
       </button>
     </div>
