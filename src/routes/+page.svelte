@@ -6,16 +6,19 @@
   import Hero from '$lib/components/LandingSections/Hero.svelte';
   import Pitch from '$lib/components/LandingSections/Pitch.svelte';
   import Contact from '$lib/components/LandingSections/Contact.svelte';
+  import InfiniteScrollingBanner from '$lib/components/LandingSections/InfiniteScrollingBanner.svelte';
 
   let { data }: { data: PageData } = $props();
 </script>
 
-<Hero class="z-10 bg-zinc-50" />
+<Hero class="z-10" />
 
-<About class="h-[108vh] bg-neutral-950 text-gray-200" />
+<About />
 
-<Projects class="z-10 bg-white" />
+<InfiniteScrollingBanner />
 
-<Pitch class="z-10 bg-brand" />
+<Projects class="z-10 " />
 
-<Contact class="bg-neutral-950" />
+<Pitch class="z-10 " />
+
+<Contact class="" />

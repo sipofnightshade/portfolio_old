@@ -1,5 +1,5 @@
 <script lang="ts">
-  import SubHeading from '../SubHeading.svelte';
+  import SectionHeading from '../SectionHeading.svelte';
 
   interface Props {
     class?: string;
@@ -8,19 +8,16 @@
 </script>
 
 <section class="relative {className}">
-  <div class="container mx-auto grid h-full grid-cols-2 gap-2 py-48">
-    <SubHeading title="about." desc="Just some short notes about myself and my goals." />
-    <div class="text-4xl font-bold leading-snug">
-      <p>
-        I am a Frontend Developer and UI/UX Designer from the Caribbean—one of the many
-        small islands. I specialize in crafting intuitive interfaces that bridge the gap
-        between technology and everyday life.
-      </p>
-      <br />
-      <p>
-        My aim is always to design solutions that seamlessly integrate into people's
-        lives, regardless of their technical background.
-      </p>
-    </div>
+  <div class="container mx-auto flex flex-col gap-8 py-48">
+    <SectionHeading
+      title="about"
+      desc="Just some short notes about myself and my goals."
+    />
+
+    <p class="text-7xl font-semibold leading-tight tracking-tight">
+      I am a <span class=" bg-brand px-2">Frontend Developer</span> and UI/UX Designer from
+      the Caribbean—one of the many small islands. I specialize in crafting intuitive interfaces
+      that bridge the gap between technology and everyday life.
+    </p>
   </div>
 </section>
