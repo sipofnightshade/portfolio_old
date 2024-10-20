@@ -6,6 +6,7 @@
   import Hero from '$lib/components/LandingSections/Hero.svelte';
   import Contact from '$lib/components/LandingSections/Contact.svelte';
   import InfiniteScrollingBanner from '$lib/components/LandingSections/InfiniteScrollingBanner.svelte';
+  import Serivces from '$lib/components/LandingSections/Serivces.svelte';
 
   let { data }: { data: PageData } = $props();
 </script>
@@ -18,6 +19,6 @@
 
 <Projects />
 
-<!-- <Pitch /> -->
+<Serivces />
 
 <Contact class="" />
