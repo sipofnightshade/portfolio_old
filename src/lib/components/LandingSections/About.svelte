@@ -8,16 +8,13 @@
 </script>
 
 <section class="relative {className}">
-  <div class="container mx-auto flex flex-col gap-8 py-48">
-    <SectionHeading
-      title="about"
-      desc="Just some short notes about myself and my goals."
-    />
+  <div class="container mx-auto flex flex-col gap-8 py-44">
+    <SectionHeading title="about" />
 
     <p class="text-7xl font-semibold leading-tight tracking-tight">
-      I am a <span class=" bg-brand px-2">Frontend Developer</span> and UI/UX Designer from
-      the Caribbean—one of the many small islands. I specialize in crafting intuitive interfaces
-      that bridge the gap between technology and everyday life.
+      I am a Frontend Developer and UI/UX Designer from the Caribbean—one of the many
+      small islands. I specialize in crafting intuitive interfaces that bridge the gap
+      between technology and everyday life.
     </p>
   </div>
 </section>
