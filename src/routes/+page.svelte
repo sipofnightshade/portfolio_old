@@ -4,7 +4,6 @@
   import Projects from '$lib/components/LandingSections/Projects.svelte';
   import About from '$lib/components/LandingSections/About.svelte';
   import Hero from '$lib/components/LandingSections/Hero.svelte';
-  import Pitch from '$lib/components/LandingSections/Pitch.svelte';
   import Contact from '$lib/components/LandingSections/Contact.svelte';
   import InfiniteScrollingBanner from '$lib/components/LandingSections/InfiniteScrollingBanner.svelte';
 
@@ -17,8 +16,8 @@
 
 <InfiniteScrollingBanner />
 
-<Projects class="z-10 " />
+<Projects />
 
-<Pitch class="z-10 " />
+<!-- <Pitch /> -->
 
 <Contact class="" />

@@ -1,9 +1,9 @@
 <script lang="ts">
   import { gsap } from 'gsap';
   import { ScrollTrigger } from 'gsap/ScrollTrigger';
-  import Link from '$lib/icons/Link.svelte';
-  import BackgroundLines from '../BackgroundLines.svelte';
-  import SubHeading from '../SubHeading.svelte';
+  import { Link } from '$lib/icons';
+  import SectionHeading from '../SectionHeading.svelte';
+  import CornerEdges from '../CornerEdges.svelte';
 
   interface Props {
     class?: string;
@@ -84,19 +84,13 @@
     <div class="aspect-[4/3] bg-gray-200"></div>
 
     <div class="flex items-end justify-between">
-      <div class="flex flex-col gap-3">
-        <h3 class="text-4xl font-bold">{data}</h3>
-        <p class="max-w-lg leading-relaxed">
-          Lorem ipsum dolar di datta sen ran truest balen. Anre saj qeor ail ander vol
-          ajut ambrosi dannil an cuoi.
-        </p>
-      </div>
+      <h3 class="text-3xl font-bold">{data}</h3>
 
       <a
         href="/"
-        class="flex h-20 w-20 items-center justify-center bg-brand transition-colors duration-300 hover:bg-neutral-950"
+        class="flex h-16 w-16 items-center justify-center bg-brand transition-colors duration-300 hover:bg-neutral-950"
       >
-        <Link classes="h-10 w-10 text-white" />
+        <Link classes="h-8 w-8 text-white" />
       </a>
     </div>
   </div>
@@ -108,21 +102,26 @@
     <div bind:this={progressBar} class="w-full bg-brand"></div>
   </div>
   <!-- progress bar  -->
-  <div class="container relative mx-auto grid h-full grid-cols-2 gap-2">
-    <BackgroundLines />
+  <div class="container mx-auto grid h-full grid-cols-2 gap-2">
     <div id="ftLeft" class="flex h-screen flex-col justify-between pb-20 pt-40">
-      <SubHeading
-        title="work."
-        dark={false}
+      <SectionHeading
+        title="projects"
         desc="A compilation of some of my favourite projects."
       />
-      <p class="flex items-start leading-none">
-        <strong class="text-9xl text-brand">{currentPanel}</strong>
-        <strong class="text-5xl">/{totalPanels}</strong>
-      </p>
+      <div class="flex items-start gap-2 font-bold leading-none">
+        <p class="text-9xl text-brand">{currentPanel}</p>
+        <div class="pt-2.5 text-4xl">
+          /{totalPanels}
+        </div>
+      </div>
     </div>
     <!-- right side -->
-    <div id="ftRight" class="flex h-full flex-col gap-10 pb-16 pt-24">
+    <div
+      id="ftRight"
+      class="relative flex h-full flex-col gap-10 border-x border-zinc-200 pb-16 pt-24"
+    >
+      <CornerEdges class="h-2" strokeWidth={20} />
+
       {@render Panel('Project One')}
       {@render Panel('Project Two')}
       {@render Panel('Project Three')}
