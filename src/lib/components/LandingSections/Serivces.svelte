@@ -24,7 +24,7 @@
 
 <section class="relative bg-black py-48 {className}">
   <div class="container mx-auto">
-    <SectionHeading title="services" darkText />
+    <SectionHeading title="services" desc="What I can do for you." dark />
   </div>
 
   {#snippet service(data: Services)}
