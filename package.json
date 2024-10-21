@@ -42,6 +42,7 @@
 		"@fontsource-variable/onest": "^5.1.0",
 		"@types/gsap": "^3.0.0",
 		"gsap": "^3.12.5",
-		"lenis": "^1.1.14"
+		"lenis": "^1.1.14",
+		"mode-watcher": "^0.4.1"
 	}
 }

@@ -4,6 +4,7 @@
   import 'lenis/dist/lenis.css';
   import { gsap } from 'gsap';
   import { ScrollContainer, type OnSetup, type Lenis } from '$lib/components/LenisScroll';
+  import { ModeWatcher } from 'mode-watcher';
   import type { Snippet } from 'svelte';
 
   let { children }: { children: Snippet } = $props();
@@ -29,7 +30,10 @@
   });
 </script>
 
-<div class="bg-gradient-to-br from-[#FDFBFB] to-[#EBEDEE] text-black">
+<ModeWatcher />
+<div
+  class="bg-gradient-to-br from-[#FDFBFB] to-[#EBEDEE] text-black dark:from-zinc-950 dark:to-black dark:text-zinc-300"
+>
   <ScrollContainer
     {onSetup}
     root
