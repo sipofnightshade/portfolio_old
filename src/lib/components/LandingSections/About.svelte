@@ -7,7 +7,7 @@
   let { class: className }: Props = $props();
 </script>
 
-<section class="relative mt-20 bg-zinc-200 dark:bg-inherit {className}">
+<section class="relative mt-20 bg-overlay dark:bg-overlay-d {className}">
   <div class="container mx-auto flex flex-col gap-8 py-44">
     <SectionHeading title="about" />
 

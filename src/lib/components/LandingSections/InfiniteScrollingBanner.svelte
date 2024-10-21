@@ -11,7 +11,7 @@
 </script>
 
 <div
-  class="flex h-48 items-center justify-center gap-6 bg-black stroke-brand font-semibold uppercase text-brand"
+  class="flex h-48 items-center justify-center gap-6 bg-surface-d stroke-brand-d font-semibold uppercase text-brand-d dark:bg-brand-d dark:stroke-primary dark:text-primary"
 >
   {#each tools as tool}
     <span class="text-5xl">{tool}</span>

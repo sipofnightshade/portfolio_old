@@ -1,16 +1,16 @@
 <script lang="ts">
-  let { title, desc = '', dark = false } = $props();
+  let { title, desc = '', class: className } = $props();
 </script>
 
-<div class="flex flex-col gap-4 font-bold">
-  <h2 class="text-2xl uppercase tracking-wider" class:text-zinc-200={dark}>{title}.</h2>
+<div class="flex flex-col gap-4 {className}">
+  <h2 class="text-2xl font-bold uppercase tracking-wider dark:text-brand-d">
+    {title}.
+  </h2>
   {#if desc}
     <div
-      class="flex max-w-80 gap-8 border-l-4 bg-brand py-2 pl-2 text-black"
-      class:border-black={!dark}
-      class:border-zinc-600={dark}
+      class=" flex max-w-80 gap-8 border-l-4 border-outline bg-overlay py-2 pl-2 dark:border-outline-d dark:bg-overlay-d"
     >
-      <p class="leading-tight">{desc}</p>
+      <p class="font-semibold leading-tight">{desc}</p>
     </div>
   {/if}
 </div>

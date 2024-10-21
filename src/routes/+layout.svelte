@@ -31,9 +31,7 @@
 </script>
 
 <ModeWatcher />
-<div
-  class="bg-gradient-to-br from-[#FDFBFB] to-[#EBEDEE] text-black dark:from-zinc-950 dark:to-black dark:text-zinc-300"
->
+<div class="bg-surface text-primary dark:bg-surface-d dark:text-primary-d">
   <ScrollContainer
     {onSetup}
     root
