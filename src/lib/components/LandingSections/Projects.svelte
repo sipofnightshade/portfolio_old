@@ -100,7 +100,7 @@
 
 <section id="work" class="relative {className}">
   <!-- progress bar  -->
-  <div id="progressBar" class="absolute left-0 top-0 h-screen w-1.5 bg-zinc-300">
+  <div id="progressBar" class="absolute left-0 top-0 h-screen w-2">
     <div bind:this={progressBar} class="w-full bg-brand"></div>
   </div>
   <!-- progress bar  -->
