@@ -111,8 +111,8 @@
         desc="A compilation of some of my favourite projects."
       />
       <div class="flex items-start gap-2 font-bold leading-none">
-        <p class="text-9xl text-brand">{currentPanel}</p>
-        <div class="pt-2.5 text-4xl">
+        <p class="text-9xl text-black">{currentPanel}</p>
+        <div class="pt-2.5 text-4xl text-zinc-400">
           /{totalPanels}
         </div>
       </div>
