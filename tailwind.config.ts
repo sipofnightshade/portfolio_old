@@ -14,7 +14,7 @@ export default {
         primary: '#15171E',
         muted: '#929599',
         frame: '#49504F',
-        outline: '#788483',
+        outline: '#A1AAA9',
         brand: '#C7E600',
         accent: '#14B8B5',
         // dark theme
@@ -23,7 +23,7 @@ export default {
         'primary-d': '#D5DDDA',
         'muted-d': '#7B8182',
         'frame-d': '#535F5D',
-        'outline-d': '#5C706D',
+        'outline-d': '#2E3836',
         'brand-d': '#ACC700',
         'accent-d': '#119C9A'
       }
