@@ -2,6 +2,7 @@
   import { Diamond, Pentagon, Triangle } from '$lib/icons';
   import { gsap } from 'gsap';
   import CornerEdges from './CornerEdges.svelte';
+  import { mode } from 'mode-watcher';
 
   $effect(() => {
     gsap.to('.testing', {
@@ -33,24 +34,24 @@
     <div class="flex gap-4">
       <button
         aria-labelledby="svg button"
-        class="borer-2 relative flex h-24 w-24 items-center justify-center border-black bg-black"
+        class="relative flex h-24 w-24 items-center justify-center border-black"
       >
         <CornerEdges />
-        <Diamond class="h-14 fill-none stroke-zinc-100" />
+        <Triangle class="h-[3.25rem] fill-none stroke-black dark:stroke-zinc-300" />
       </button>
       <button
         aria-labelledby="svg button"
-        class="bordr-2 relative flex h-24 w-24 items-center justify-center border-black bg-brand"
+        class="relative flex h-24 w-24 items-center justify-center border-black bg-brand dark:bg-brand-dark dark:text-brand-dark"
       >
         <CornerEdges />
         <Pentagon class="h-14 fill-none stroke-black" />
       </button>
       <button
         aria-labelledby="svg button"
-        class="bordr-2 relative flex h-24 w-24 items-center justify-center border-black"
+        class="relative flex h-24 w-24 items-center justify-center border-black bg-black dark:bg-zinc-300"
       >
-        <CornerEdges />
-        <Triangle class="h-[3.25rem] fill-none stroke-black" />
+        <CornerEdges class="h-3 stroke-zinc-100 dark:text-zinc-500" />
+        <Diamond class="h-14 fill-none stroke-zinc-100 dark:stroke-black" />
       </button>
     </div>
 
@@ -59,17 +60,29 @@
     </div>
   </div>
 
-  <h1 class="stroked-text w-full flex-col">experiences</h1>
+  <h1
+    class="w-full flex-col"
+    class:stroked-text-dark={$mode === 'dark'}
+    class:stroked-text-light={$mode === 'light'}
+  >
+    experiences
+  </h1>
 </div>
 
-<style>
+<style lang="postcss">
   h1 {
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
   }
 
-  .stroked-text {
+  .stroked-text-light {
     -webkit-text-stroke-width: 4px;
     -webkit-text-stroke-color: black;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .stroked-text-dark {
+    -webkit-text-stroke-width: 3px;
+    -webkit-text-stroke-color: #d4d4d8;
     -webkit-text-fill-color: transparent;
   }
 </style>
