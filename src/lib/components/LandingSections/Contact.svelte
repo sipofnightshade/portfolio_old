@@ -16,21 +16,22 @@
           <p>Lorem ipsum dolor sit amet consectetur.</p>
         </div>
 
-        <div class="flex h-11 w-11 items-center justify-center bg-black">
-          <Triangle class="h-5 fill-none stroke-zinc-200" />
+        <div class="flex h-11 w-11 items-center justify-center bg-frame dark:bg-frame-d">
+          <Triangle class="h-5 fill-none stroke-surface" />
         </div>
       </div>
       <a
         href="mailto:info@gregorymcmillan.me"
-        class="border-4 border-black bg-brand p-10 text-9xl font-semibold"
-        >Get in touch!</a
+        class="border-4 border-primary bg-brand p-10 text-9xl font-semibold text-primary dark:bg-brand-d"
       >
+        Get in touch!
+      </a>
       <div class="flex w-full items-center justify-between">
-        <div class="flex h-11 w-11 items-center justify-center bg-black">
-          <Pentagon class="h-6 fill-none stroke-zinc-200" />
+        <div class="flex h-11 w-11 items-center justify-center bg-frame dark:bg-frame-d">
+          <Pentagon class="h-6 fill-none stroke-surface" />
         </div>
-        <div class="flex h-11 w-11 items-center justify-center bg-black">
-          <Diamond class="h-6 fill-none stroke-zinc-200" />
+        <div class="flex h-11 w-11 items-center justify-center bg-frame dark:bg-frame-d">
+          <Diamond class="h-6 fill-none stroke-surface" />
         </div>
       </div>
     </div>

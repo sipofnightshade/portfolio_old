@@ -8,7 +8,7 @@
 
   let { class: className }: Props = $props();
 
-  let services: Services[] = [
+  const services: Services[] = [
     {
       title: 'ui / ux',
       desc: 'I design user interfaces that are intuitive and visually appealing.'
@@ -22,13 +22,13 @@
   ];
 </script>
 
-<section class="relative bg-black py-48 {className}">
+<section class="b relative bg-surface-d py-48 text-primary-d {className}">
   <div class="container mx-auto">
     <SectionHeading title="services" desc="What I can do for you." dark />
   </div>
 
   {#snippet service(data: Services)}
-    <div class="border-y border-zinc-800 py-5">
+    <div class="border-y border-outline-d py-5">
       <div class="container mx-auto">
         <h3 class="text-9xl font-bold uppercase leading-none text-zinc-200">
           {data.title}
@@ -36,7 +36,7 @@
       </div>
     </div>
   {/snippet}
-  <div class="mt-8 border-b border-zinc-800">
+  <div class="mt-8 border-b border-outline-d">
     {#each services as data}
       {@render service(data)}
     {/each}

@@ -21,4 +21,4 @@
 
 <Serivces />
 
-<Contact class="" />
+<Contact />

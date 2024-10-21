@@ -3,7 +3,6 @@
   import { ScrollTrigger } from 'gsap/ScrollTrigger';
   import { Link } from '$lib/icons';
   import SectionHeading from '../SectionHeading.svelte';
-  import CornerEdges from '../CornerEdges.svelte';
 
   interface Props {
     class?: string;
@@ -56,7 +55,7 @@
           scrollTrigger: {
             trigger: panel,
             start: 'top bottom', // Animation starts when the panel is 80% from the top
-            end: 'top 20%', // Ends when the panel is 20% from the top
+            end: 'top 5%', // Ends when the panel is 5% from the top
             scrub: 1, // Smooth scrubbing
             // markers: true,
             onEnter: () => {
@@ -79,31 +78,30 @@
 </script>
 
 {#snippet Panel(data: string)}
-  <div class="panel my-12 flex translate-y-44 flex-col gap-3">
+  <a href="/" class="panel group my-12 flex translate-y-44 flex-col gap-3">
     <!-- image here -->
-    <div class="aspect-[4/3] bg-gray-200"></div>
+    <div class="aspect-[4/3] bg-overlay dark:bg-overlay-d"></div>
 
-    <div class="flex items-end justify-between pl-4">
+    <div class="flex items-end justify-between pl-2">
       <h3 class="text-2xl font-bold">{data}</h3>
 
-      <a
-        href="/"
-        class="group flex h-14 w-14 items-center justify-center bg-zinc-300 duration-300 hover:bg-brand"
+      <div
+        class="flex h-14 w-14 items-center justify-center bg-zinc-300 duration-300 group-hover:bg-brand"
       >
         <Link
           classes="h-5 w-5 text-black rotate-45 group-hover:rotate-0 transition-transform"
         />
-      </a>
+      </div>
     </div>
-  </div>
+  </a>
 {/snippet}
 
 <section id="work" class="relative {className}">
-  <!-- progress bar  -->
   <div id="progressBar" class="absolute left-0 top-0 h-screen w-2">
-    <div bind:this={progressBar} class="w-full bg-brand"></div>
+    <div bind:this={progressBar} class="w-full bg-brand dark:bg-brand-d"></div>
   </div>
-  <!-- progress bar  -->
+
+  <!-- left side -->
   <div class="container mx-auto grid h-full grid-cols-2 gap-2">
     <div id="ftLeft" class="flex h-screen flex-col justify-between pb-20 pt-40">
       <SectionHeading
@@ -111,8 +109,8 @@
         desc="A compilation of some of my favourite projects."
       />
       <div class="flex items-start gap-2 font-bold leading-none">
-        <p class="text-9xl text-black">{currentPanel}</p>
-        <div class="pt-2.5 text-4xl text-zinc-400">
+        <p class="text-9xl text-primary dark:text-primary-d">{currentPanel}</p>
+        <div class="pt-2.5 text-4xl text-muted dark:text-muted-d">
           /{totalPanels}
         </div>
       </div>
@@ -120,7 +118,7 @@
     <!-- right side -->
     <div
       id="ftRight"
-      class="relative flex h-full flex-col gap-10 border-x border-zinc-400 pb-16 pt-24"
+      class="relative flex h-full flex-col gap-10 border-x border-outline pb-16 pt-24 dark:border-outline-d"
     >
       <!-- <CornerEdges class="h-2" strokeWidth={20} /> -->
 
