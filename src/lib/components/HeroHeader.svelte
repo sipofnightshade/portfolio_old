@@ -25,12 +25,11 @@
   </strong>
 </h1> -->
 
-<div class="mb-4 w-full text-[12rem] font-bold uppercase leading-none tracking-wide">
+<div class="mb-4 w-full text-[176px] font-bold uppercase leading-none tracking-wide">
   <h1 class="w-full flex-col">creating</h1>
 
   <div class="flex items-center justify-between">
     <!-- control buttons -->
-
     <div class="flex gap-4">
       <button
         aria-labelledby="svg button"
@@ -48,14 +47,14 @@
       </button>
       <button
         aria-labelledby="svg button"
-        class="relative flex h-24 w-24 items-center justify-center border-black bg-black dark:bg-zinc-300"
+        class="relative flex h-24 w-24 items-center justify-center border-black bg-black dark:bg-zinc-200"
       >
         <CornerEdges class="h-3 stroke-zinc-100 dark:text-zinc-500" />
         <Diamond class="h-14 fill-none stroke-zinc-100 dark:stroke-black" />
       </button>
     </div>
 
-    <div class="bg-black px-8 py-2 text-zinc-100">
+    <div class="bg-black px-8 py-2 text-zinc-100 dark:bg-zinc-200 dark:text-black">
       <h1 class="w-full flex-col text-right">seamless</h1>
     </div>
   </div>
