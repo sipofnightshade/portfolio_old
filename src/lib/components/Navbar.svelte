@@ -38,7 +38,8 @@
 
 <div id="navbar" class="fixed top-0 z-50 flex w-full items-center justify-center">
   <div class="container flex w-full justify-between py-3 text-xl">
-    <a href="/" class="text-2xl font-bold mix-blend-screen">Greg.</a>
+    <a href="/" class="text-2xl font-bold">Greg.</a>
+
     <nav class="flex items-center gap-9 text-lg font-semibold">
       <button onclick={handleModeChange}>{$mode === 'dark' ? 'AM' : 'PM'}</button>
 
