@@ -1,0 +1,46 @@
+{
+  "id": "project3",
+  "name": "Project 3",
+  "description": "A cutting-edge e-commerce platform designed to revolutionize online shopping.",
+  "client": "Acme Corporation",
+  "industry": "Gaming",
+  "uri": "project3",
+  "liveUrl": "https://project3.com",
+  "repository": "https://github.com/user/project3",
+  "image": "hero.webp",
+  "featuredImage": "featured.webp",
+  "roles": ["designer", "developer"],
+  "platforms": ["Web", "Mobile", "PWA"],
+  "technologies": ["sveltekit", "typescript"],
+  "keywords": ["e-commerce", "web development", "mern stack"],
+  "featured": true,
+  "sections": [
+    {
+      "type": "text",
+      "title": "Project Overview",
+      "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit...",
+      "footnote": null
+    },
+    {
+      "type": "image",
+      "image": "project3_section1.webp",
+      "alt": "Project 3 Section 1 Image"
+    },
+    {
+      "type": "gallery",
+      "images": ["project3_gallery1.webp", "project3_gallery2.webp"],
+      "caption": "Project Gallery"
+    },
+    {
+      "type": "video",
+      "url": "https://www.youtube.com/watch?v=examplevideo",
+      "title": "Project Demo"
+    },
+    {
+      "type": "testimonial",
+      "quote": "This project has exceeded our expectations.",
+      "author": "Client Name",
+      "position": "Client Title"
+    }
+  ]
+}
