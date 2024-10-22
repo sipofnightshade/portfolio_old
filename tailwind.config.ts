@@ -9,7 +9,7 @@ export default {
     },
     extend: {
       colors: {
-        surface: '#E4E7E7',
+        surface: '#F1F3F3',
         overlay: '#D7DBDA',
         primary: '#15171E',
         muted: '#929599',

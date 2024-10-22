@@ -11,7 +11,7 @@
   let { data }: { data: PageData } = $props();
 </script>
 
-<Hero class="z-10" />
+<Hero />
 
 <About />
 

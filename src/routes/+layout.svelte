@@ -6,6 +6,7 @@
   import { ScrollContainer, type OnSetup, type Lenis } from '$lib/components/LenisScroll';
   import { ModeWatcher } from 'mode-watcher';
   import type { Snippet } from 'svelte';
+  import Navbar from '$lib/components/Navbar.svelte';
 
   let { children }: { children: Snippet } = $props();
 
@@ -37,6 +38,8 @@
     root
     options={{ smoothWheel: true, orientation: 'vertical', lerp: 0.1 }}
   >
+    <Navbar />
+
     {@render children()}
   </ScrollContainer>
 </div>

@@ -1,6 +1,5 @@
 <script lang="ts">
   import HeroHeader from '../HeroHeader.svelte';
-  import Navbar from '../Navbar.svelte';
 
   interface Props {
     class?: string;
@@ -9,8 +8,7 @@
 </script>
 
 <section class="relative {className}">
-  <div class="container relative mx-auto flex h-screen w-screen flex-col justify-between">
-    <Navbar />
+  <div class="container relative mx-auto flex h-screen w-screen flex-col justify-end">
     <HeroHeader />
   </div>
 </section>
