@@ -1,8 +1,8 @@
 <script lang="ts">
-  let { classes = '' } = $props();
+  let { class: className = '' } = $props();
 </script>
 
-<svg xmlns="http://www.w3.org/2000/svg" class={classes} viewBox="0 0 45 44" fill="none"
+<svg xmlns="http://www.w3.org/2000/svg" class={className} viewBox="0 0 45 44" fill="none"
   ><path
     stroke="currentColor"
     stroke-linecap="square"

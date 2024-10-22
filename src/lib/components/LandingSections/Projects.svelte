@@ -89,7 +89,7 @@
         class="flex h-14 w-14 items-center justify-center bg-zinc-300 duration-300 group-hover:bg-brand"
       >
         <Link
-          classes="h-5 w-5 text-black rotate-45 group-hover:rotate-0 transition-transform"
+          class="h-5 w-5 rotate-45 text-black transition-transform duration-300 group-hover:rotate-0"
         />
       </div>
     </div>
