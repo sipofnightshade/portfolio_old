@@ -1,4 +1,5 @@
 <script lang="ts">
+  import Heading from '$lib/components/Heading.svelte';
   import type { PageData } from './$types';
 
   interface Props {
@@ -8,7 +9,7 @@
   let { data }: Props = $props();
 </script>
 
-<h1>This is a list of my work!</h1>
+<Heading title="Projects" />
 
 {#each data.projects as project}
   <p>{project.name}</p>
