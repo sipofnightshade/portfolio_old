@@ -54,7 +54,7 @@
       </button>
     </div>
 
-    <div class="bg-black px-8 py-2 text-primary-d dark:bg-primary-d dark:text-surface-d">
+    <div class="bg-primary px-8 py-2 text-surface dark:bg-primary-d dark:text-surface-d">
       <h1 class="w-full flex-col text-right">seamless</h1>
     </div>
   </div>
