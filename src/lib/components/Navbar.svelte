@@ -44,7 +44,7 @@
       <button onclick={handleModeChange}>{$mode === 'dark' ? 'AM' : 'PM'}</button>
 
       <a href="/about">About</a>
-      <a href="/work">Projects</a>
+      <a href="/projects">Projects</a>
 
       <a
         href="/mailto:info@gregorymcmillan.me"
