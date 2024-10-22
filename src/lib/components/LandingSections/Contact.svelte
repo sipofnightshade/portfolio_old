@@ -8,7 +8,7 @@
   let { class: className }: Props = $props();
 </script>
 
-<section class="h-[104vh] {className}">
+<section class="h-screen {className}">
   <div class="container mx-auto flex h-full flex-col justify-between pb-0 pt-20">
     <div class="flex h-full flex-col items-center justify-between">
       <div class="flex w-full items-center justify-between">
