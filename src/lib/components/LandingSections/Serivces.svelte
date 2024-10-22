@@ -22,7 +22,9 @@
   ];
 </script>
 
-<section class="b relative bg-surface-d py-48 text-primary-d {className}">
+<section
+  class="relative bg-surface-d py-48 text-primary-d dark:border-t dark:border-outline-d {className}"
+>
   <div class="container mx-auto">
     <SectionHeading title="services" desc="What I can do for you." dark />
   </div>
