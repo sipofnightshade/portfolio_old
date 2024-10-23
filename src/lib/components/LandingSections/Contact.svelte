@@ -11,9 +11,12 @@
 <section class="h-screen {className}">
   <div class="container mx-auto flex h-full flex-col justify-between pb-0 pt-20">
     <div class="flex h-full flex-col items-center justify-between">
-      <div class="flex w-full items-center justify-between">
-        <div>
-          <p>Lorem ipsum dolor sit amet consectetur.</p>
+      <div class="flex w-full items-start justify-between">
+        <div class="max-w-md border-l-4 border-outline px-2 dark:border-outline-d">
+          <p class="font-bold">
+            Got an idea or a project in mind? I’d love to help bring it to life. Feel free
+            to reach out and let’s get started!
+          </p>
         </div>
 
         <div class="flex h-11 w-11 items-center justify-center bg-frame dark:bg-frame-d">
