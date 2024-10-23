@@ -11,13 +11,23 @@
 
 <Heading title="Who I am." />
 
-<div class="container mx-auto pb-40 pt-16">
-  <p class="text-7xl font-semibold leading-tight tracking-tight">
-    I am a Frontend Developer and UI/UX Designer from the Caribbean—one of the many small
-    islands. I specialize in crafting intuitive interfaces that bridge the gap between
-    technology and everyday life.
+<div class="container mx-auto pb-40 pt-8">
+  <p class="text-6xl font-semibold leading-tight tracking-tight">
+    Hi, I’m Gregory, a full-stack developer and UI/UX designer from the Caribbean. Growing
+    up on a small island shaped my approach to problem-solving and creativity. I enjoy
+    turning ideas into functional, well-designed digital experiences that are simple and
+    effective.
   </p>
 </div>
 <InfiniteScrollingBanner />
+<div class="py-60">
+  <div class="container mx-auto">
+    <p class="text-6xl font-semibold leading-tight tracking-tight">
+      I design simple, intuitive interfaces and build scalable applications using open
+      source tools like Appwrite and Pocketbase. Whether it's frontend or backend, I focus
+      on creating solutions that are practical, reliable, and easy to use.
+    </p>
+  </div>
+</div>
 <Serivces />
 <Contact />
