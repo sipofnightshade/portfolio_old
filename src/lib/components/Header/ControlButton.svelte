@@ -15,18 +15,18 @@
 
 <button
   aria-labelledby="control"
-  class="relative flex h-24 w-24 items-center justify-center
+  class="relative flex h-12 w-12 items-center justify-center md:h-16 md:w-16 xl:h-20 xl:w-20
     {state === 'correct' && 'bg-brand *:stroke-primary dark:bg-brand-d'} 
     {state === 'incorrect' &&
     'bg-primary *:stroke-primary-d dark:bg-primary-d *:dark:stroke-primary'} 
     {state === 'empty' && '*:stroke-primary *:dark:stroke-primary-d'}"
 >
-  <CornerEdges class="h-3 text-frame dark:text-frame-d" />
+  <CornerEdges class="h-2 text-frame md:h-2.5 xl:h-3 dark:text-frame-d" />
   {#if type === 'dia'}
-    <Diamond class="h-14 fill-none" />
+    <Diamond class="md:10 h-8 fill-none xl:h-14" />
   {:else if type === 'pent'}
-    <Pentagon class="h-14 fill-none" />
+    <Pentagon class="md:10 h-8 fill-none xl:h-14" />
   {:else if type === 'tri'}
-    <Triangle class="h-[3.25rem] fill-none " />
+    <Triangle class="md:10 h-8 fill-none xl:h-[3.25rem] " />
   {/if}
 </button>
