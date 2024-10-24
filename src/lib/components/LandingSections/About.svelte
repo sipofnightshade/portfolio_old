@@ -8,7 +8,7 @@
 </script>
 
 <section class="relative mt-20 bg-overlay dark:bg-overlay-d {className}">
-  <div class="container mx-auto flex flex-col gap-8 py-44">
+  <div class="container mx-auto flex flex-col gap-8 py-40">
     <SectionHeading title="about" />
 
     <p class="text-7xl font-semibold leading-tight tracking-tight">

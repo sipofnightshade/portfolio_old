@@ -12,7 +12,7 @@
 <Heading title="Who I am." />
 
 <div class="container mx-auto pb-40 pt-8">
-  <p class="text-6xl font-semibold leading-tight tracking-tight">
+  <p class="text-6xl leading-tight">
     Hi, I’m Gregory, a full-stack developer and UI/UX designer from the Caribbean. Growing
     up on a small island shaped my approach to problem-solving and creativity. I enjoy
     turning ideas into functional, well-designed digital experiences that are simple and
@@ -20,9 +20,9 @@
   </p>
 </div>
 <InfiniteScrollingBanner />
-<div class="py-60">
+<div class="py-40">
   <div class="container mx-auto">
-    <p class="text-6xl font-semibold leading-tight tracking-tight">
+    <p class="text-6xl leading-tight">
       I design simple, intuitive interfaces and build scalable applications using open
       source tools like Appwrite and Pocketbase. Whether it's frontend or backend, I focus
       on creating solutions that are practical, reliable, and easy to use.
