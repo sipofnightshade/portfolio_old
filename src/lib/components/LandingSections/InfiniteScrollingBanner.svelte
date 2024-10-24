@@ -44,9 +44,13 @@
 
 <ul
   id="horizontalScroller"
-  class="flex h-48 items-center justify-center overflow-hidden bg-surface-d stroke-brand-d font-semibold uppercase text-brand-d dark:bg-brand-d dark:stroke-primary dark:text-primary"
+  class="flex h-28 items-center justify-center overflow-hidden bg-surface-d stroke-brand-d font-semibold uppercase text-brand-d md:h-40 xl:h-48 dark:bg-brand-d dark:stroke-primary dark:text-primary"
 >
   {#each tools as tool}
-    <li class="inline-block px-16 text-5xl will-change-transform">{tool}</li>
+    <li
+      class="inline-block px-6 text-2xl will-change-transform sm:px-8 md:px-12 md:text-4xl xl:px-16 xl:text-5xl"
+    >
+      {tool}
+    </li>
   {/each}
 </ul>
