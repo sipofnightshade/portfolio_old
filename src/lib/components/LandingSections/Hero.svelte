@@ -1,5 +1,5 @@
 <script lang="ts">
-  import HeroHeader from '../HeroHeader.svelte';
+  import HeroHeader from '../Header/Header.svelte';
 
   interface Props {
     class?: string;
