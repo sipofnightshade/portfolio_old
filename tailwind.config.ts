@@ -5,10 +5,15 @@ export default {
   darkMode: 'selector',
   theme: {
     container: {
-      padding: '0.5rem',
+      padding: {
+        DEFAULT: '1rem',
+        md: '1.5rem',
+        lg: '2rem'
+      },
       center: true
     },
     screens: {
+      nn: '380px',
       xs: '460px',
       sm: '640px',
       md: '768px',
