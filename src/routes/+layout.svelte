@@ -7,6 +7,7 @@
   import { ModeWatcher } from 'mode-watcher';
   import type { Snippet } from 'svelte';
   import Navbar from '$lib/components/Navbar.svelte';
+  import ShowBreakpoint from '$lib/components/ShowBreakpoint.svelte';
 
   let { children }: { children: Snippet } = $props();
 
@@ -31,6 +32,7 @@
   });
 </script>
 
+<ShowBreakpoint />
 <ModeWatcher />
 <div class="bg-surface text-primary dark:bg-surface-d dark:text-primary-d">
   <ScrollContainer
