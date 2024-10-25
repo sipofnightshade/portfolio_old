@@ -67,10 +67,11 @@
         class="service-item group relative h-32 overflow-hidden border-y border-outline-d bg-brand-d md:h-36 xl:h-48"
       >
         <!-- shutters -->
-        <div class="shutter-t absolute left-0 top-0 h-1/2 w-full bg-surface-d"></div>
-        <div class="shutter-b absolute bottom-0 left-0 h-1/2 w-full bg-surface-d"></div>
+        <div class="shutter-t absolute left-0 top-0 h-[51%] w-full bg-surface-d"></div>
+        <div class="shutter-b absolute bottom-0 left-0 h-[51%] w-full bg-surface-d"></div>
 
-        <div class="container">
+        <!-- wrapper container for positioning fixes -->
+        <div class="container relative h-full">
           <!-- title -->
           <div class="service-title absolute z-20 flex h-full w-full items-center">
             <h3
@@ -95,11 +96,6 @@
 </section>
 
 <style>
-  .service-item {
-    position: relative;
-    overflow: hidden;
-  }
-
   .shutter-t,
   .shutter-b {
     z-index: 1;
