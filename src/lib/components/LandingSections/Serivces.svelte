@@ -17,15 +17,18 @@
     { title: 'review', desc: 'I review your current solutions and provide feedback.' }
   ];
 
-  // Use GSAP for split reveal animations
-  $effect(() => {
-    const services = document.querySelectorAll('.service-item');
+  let serviceItems: HTMLElement[] = $state([]);
+  let shutterTops: HTMLElement[] = $state([]);
+  let shutterBottoms: HTMLElement[] = $state([]);
+  let titles: HTMLElement[] = $state([]);
+  let contents: HTMLElement[] = $state([]);
 
-    services.forEach((service) => {
-      const shutterTop = service.querySelector('.shutter-t');
-      const shutterBottom = service.querySelector('.shutter-b');
-      const title = service.querySelector('.service-title');
-      const content = service.querySelector('.details');
+  $effect(() => {
+    serviceItems.forEach((service, index) => {
+      const shutterTop = shutterTops[index];
+      const shutterBottom = shutterBottoms[index];
+      const title = titles[index];
+      const content = contents[index];
 
       // Initialize GSAP animations
       gsap.set([shutterTop, shutterBottom], { yPercent: 0 });
@@ -42,13 +45,12 @@
 
       // Add hover animation using GSAP timeline
       service.addEventListener('mouseenter', () => {
-        tl.reversed(false); // Ensure the timeline plays forward
+        tl.reversed(false);
         tl.play();
       });
 
-      // Reverse animation on mouseleave
       service.addEventListener('mouseleave', () => {
-        tl.reverse(); // Reverse the timeline
+        tl.reverse();
       });
     });
   });
@@ -62,18 +64,28 @@
   </div>
 
   <div class="mt-8 border-b border-outline-d">
-    {#each services as data}
+    {#each services as data, i}
       <div
+        bind:this={serviceItems[i]}
         class="service-item group relative h-32 overflow-hidden border-y border-outline-d bg-brand-d md:h-36 xl:h-48"
       >
         <!-- shutters -->
-        <div class="shutter-t absolute left-0 top-0 h-[51%] w-full bg-surface-d"></div>
-        <div class="shutter-b absolute bottom-0 left-0 h-[51%] w-full bg-surface-d"></div>
+        <div
+          bind:this={shutterTops[i]}
+          class="shutter-t absolute left-0 top-0 h-[51%] w-full bg-surface-d"
+        ></div>
+        <div
+          bind:this={shutterBottoms[i]}
+          class="shutter-b absolute bottom-0 left-0 h-[51%] w-full bg-surface-d"
+        ></div>
 
         <!-- wrapper container for positioning fixes -->
         <div class="container relative h-full">
           <!-- title -->
-          <div class="service-title absolute z-20 flex h-full w-full items-center">
+          <div
+            bind:this={titles[i]}
+            class="service-title absolute z-20 flex h-full w-full items-center"
+          >
             <h3
               class="xs:text-5xl text-4xl font-bold uppercase leading-none text-primary-d sm:text-6xl md:text-7xl xl:text-9xl"
             >
@@ -82,6 +94,7 @@
           </div>
           <!-- details -->
           <div
+            bind:this={contents[i]}
             class="details absolute flex h-full w-full flex-col items-start justify-center gap-2 py-2"
           >
             <h3 class="font-bold uppercase leading-none text-primary lg:text-3xl">
@@ -104,6 +117,6 @@
 
   .service-title,
   .details {
-    transition: opacity 0.1s ease;
+    transition: opacity 0.15s ease;
   }
 </style>
