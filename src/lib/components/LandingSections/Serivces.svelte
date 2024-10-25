@@ -35,8 +35,8 @@
       // Create a reusable timeline for each service item
       const tl = gsap.timeline({ paused: true, reversed: true });
 
-      tl.to(shutterTop, { yPercent: -100, duration: 0.15, ease: 'back.inOut' })
-        .to(shutterBottom, { yPercent: 100, duration: 0.15, ease: 'back.inOut' }, 0)
+      tl.to(shutterTop, { yPercent: -100, duration: 0.15, ease: 'power1.out' })
+        .to(shutterBottom, { yPercent: 100, duration: 0.15, ease: 'power1.out' }, 0)
         .to(title, { opacity: 0, duration: 0.1, ease: 'back.inOut' }, 0)
         .to(content, { opacity: 1, duration: 0.1, ease: 'back.inOut' }, 0.15);
 
@@ -55,7 +55,7 @@
 </script>
 
 <section
-  class="relative bg-surface-d py-40 text-primary-d dark:border-t dark:border-outline-d"
+  class="relative bg-surface-d py-28 text-primary-d md:py-32 lg:py-40 dark:border-t dark:border-outline-d"
 >
   <div class="container mx-auto">
     <SectionHeading title="services" desc="What I can do for you." dark />
@@ -64,13 +64,13 @@
   <div class="mt-8 border-b border-outline-d">
     {#each services as data}
       <div
-        class="service-item group relative h-32 overflow-hidden border-y border-outline-d bg-brand-d md:h-36 xl:h-52"
+        class="service-item group relative h-32 overflow-hidden border-y border-outline-d bg-brand-d md:h-36 xl:h-48"
       >
         <!-- shutters -->
         <div class="shutter-t absolute left-0 top-0 h-1/2 w-full bg-surface-d"></div>
         <div class="shutter-b absolute bottom-0 left-0 h-1/2 w-full bg-surface-d"></div>
 
-        <div class="container !bg-red-500">
+        <div class="container">
           <!-- title -->
           <div class="service-title absolute z-20 flex h-full w-full items-center">
             <h3
