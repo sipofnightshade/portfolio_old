@@ -4,7 +4,7 @@
 </script>
 
 <section class="h-screen">
-  <div class="container mx-auto flex h-full flex-col justify-between pb-0 md:pt-20">
+  <div class="container mx-auto flex h-full flex-col justify-between pb-0 pt-8 md:pt-20">
     <div class="flex h-full flex-col items-center justify-between">
       <div class="flex w-full items-start justify-between gap-2">
         <div class="max-w-md border-l-4 border-outline px-2 dark:border-outline-d">
