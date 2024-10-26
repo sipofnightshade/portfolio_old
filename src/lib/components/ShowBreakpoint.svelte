@@ -1,5 +1,5 @@
 <div
-  class="fixed right-3 top-3 z-50 rounded bg-purple-500 px-3 py-2 font-bold uppercase text-primary"
+  class="fixed bottom-3 right-3 z-50 rounded bg-purple-500 px-3 py-2 font-bold uppercase text-primary"
 >
   <span class="nn:hidden">base</span>
   <span class="nn:block xs:hidden hidden">nano</span>
