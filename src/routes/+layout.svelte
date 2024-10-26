@@ -6,7 +6,7 @@
   import { ScrollContainer, type OnSetup, type Lenis } from '$lib/components/LenisScroll';
   import { ModeWatcher } from 'mode-watcher';
   import type { Snippet } from 'svelte';
-  import Navbar from '$lib/components/Navbar.svelte';
+  import Navbar from '$lib/components/Navbar/Navbar.svelte';
   import ShowBreakpoint from '$lib/components/ShowBreakpoint.svelte';
 
   let { children }: { children: Snippet } = $props();
@@ -21,7 +21,7 @@
   $effect(() => {
     // Use GSAP's ticker for Lenis updates instead of autoRaf
     function update(time: number) {
-      lenis?.raf(time * 1000);
+      lenis?.raf(time * 800);
     }
 
     gsap.ticker.add(update);
@@ -45,3 +45,11 @@
     {@render children()}
   </ScrollContainer>
 </div>
+
+<style lang="postcss">
+  :global(body),
+  :global(html) {
+    scrollbar-color: theme(colors.muted-d) theme(colors.surface-d);
+    scrollbar-width: thin;
+  }
+</style>
