@@ -17,7 +17,7 @@
 
 <InfiniteScrollingBanner />
 
-<Projects />
+<!-- <Projects /> -->
 
 <Serivces />
 
