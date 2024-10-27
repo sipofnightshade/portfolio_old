@@ -11,7 +11,6 @@
   import { mode } from 'mode-watcher';
 
   const screenLg = new MediaQuery('(min-width: 1024px)');
-  const screenFull = new MediaQuery('(min-width: 1024px)');
 
   // refs
   let menu: HTMLDivElement | null = $state(null);
@@ -40,12 +39,12 @@
     return 0;
   });
 
-  function openMenu() {
+  export function openMenu() {
     if (!menuTimeline) return;
     menuTimeline.play();
   }
 
-  function closeMenu() {
+  export function closeMenu() {
     if (!menuTimeline) return;
     menuTimeline.reverse(0.58);
   }
@@ -99,8 +98,6 @@
 </script>
 
 <svelte:window bind:innerWidth bind:innerHeight />
-<!-- Trigger button for the menu -->
-<Button class="static z-40" handleClick={openMenu}>Menu</Button>
 
 <!-- svelte-ignore a11y_click_events_have_key_events -->
 <!-- svelte-ignore a11y_no_static_element_interactions -->

@@ -3,9 +3,9 @@
   import { ScrollTrigger } from 'gsap/ScrollTrigger';
   import throttle from '$lib/utils/throttle';
   import Menu from './Menu.svelte';
-  import { MediaQuery } from 'runed';
+  import Button from './Button.svelte';
 
-  const screenLg = new MediaQuery('(min-width: 1024px)');
+  let menu: ReturnType<typeof Menu> | undefined = $state();
 
   $effect(() => {
     gsap.registerPlugin(ScrollTrigger);
@@ -36,14 +36,7 @@
     class="container relative flex w-full justify-between py-6 text-xl lg:max-w-none lg:px-12 xl:px-16 2xl:px-20"
   >
     <a href="/" class="text-xl font-bold">Greg.</a>
-
-    <Menu />
+    <Button handleClick={() => menu?.openMenu()}>Menu</Button>
   </div>
 </div>
-
-<style>
-  /* Optional: Hide content until JS loads */
-  :global(body:not(:has(#navbar))) {
-    visibility: hidden;
-  }
-</style>
+<Menu bind:this={menu} />
