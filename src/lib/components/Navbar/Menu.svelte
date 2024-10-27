@@ -96,12 +96,6 @@
         );
     }
   });
-
-  $effect(() => {
-    if (menuTimeline) {
-      menuTimeline.play();
-    }
-  });
 </script>
 
 <svelte:window bind:innerWidth bind:innerHeight />
