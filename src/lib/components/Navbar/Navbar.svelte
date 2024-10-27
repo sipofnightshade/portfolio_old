@@ -2,12 +2,7 @@
   import { gsap } from 'gsap';
   import { ScrollTrigger } from 'gsap/ScrollTrigger';
   import throttle from '$lib/utils/throttle';
-  import Button from './Button.svelte';
   import Menu from './Menu.svelte';
-
-  let isOpen = $state(false);
-
-  const toggleMenu = () => (isOpen = !isOpen);
 
   $effect(() => {
     gsap.registerPlugin(ScrollTrigger);
