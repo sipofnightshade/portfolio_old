@@ -67,7 +67,7 @@
     {#each services as data, i}
       <div
         bind:this={serviceItems[i]}
-        class="service-item group relative h-32 overflow-hidden border-y border-outline-d bg-brand-d md:h-36 xl:h-48"
+        class="service-item group relative h-32 overflow-hidden border-y border-outline-d bg-brand-d md:h-36 xl:h-44"
       >
         <!-- shutters -->
         <div
@@ -87,7 +87,7 @@
             class="service-title absolute z-20 flex h-full w-full items-center"
           >
             <h3
-              class="xs:text-5xl text-4xl font-bold uppercase leading-none text-primary-d sm:text-6xl md:text-7xl xl:text-9xl"
+              class="text-4xl font-bold uppercase leading-none text-primary-d xs:text-5xl sm:text-6xl md:text-7xl xl:text-9xl"
             >
               {data.title}
             </h3>
