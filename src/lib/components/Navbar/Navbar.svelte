@@ -33,11 +33,17 @@
 
 <div id="navbar" class="fixed top-0 z-30 flex w-full items-center justify-center">
   <div
-    class="relative flex w-full justify-between py-6 text-xl lg:px-12 xl:px-16 2xl:px-20"
-    class:container={!screenLg.matches}
+    class="container relative flex w-full justify-between py-6 text-xl lg:max-w-none lg:px-12 xl:px-16 2xl:px-20"
   >
     <a href="/" class="text-xl font-bold">Greg.</a>
 
     <Menu />
   </div>
 </div>
+
+<style>
+  /* Optional: Hide content until JS loads */
+  :global(body:not(:has(#navbar))) {
+    visibility: hidden;
+  }
+</style>
