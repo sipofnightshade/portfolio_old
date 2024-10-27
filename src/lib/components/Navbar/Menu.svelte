@@ -7,7 +7,11 @@
   import Diamond from '$lib/icons/Diamond.svelte';
   import { updateIndicator } from './updateIndicator.svelte';
   import { menuItems } from './data';
-  import { on } from 'svelte/events';
+  import { MediaQuery } from 'runed';
+  import { mode } from 'mode-watcher';
+
+  const screenLg = new MediaQuery('(min-width: 1024px)');
+  const screenFull = new MediaQuery('(min-width: 1024px)');
 
   // refs
   let menu: HTMLDivElement | null = $state(null);
@@ -20,20 +24,18 @@
   let menuTimeline: gsap.core.Timeline | null = $state(null);
 
   let activeContainer: HTMLElement | null = $state(null);
+  let innerWidth = $state(0);
+  let innerHeight = $state(0);
 
   $effect(() => {
     $page.route.id;
     activeContainer = document.querySelector('[data-active="true"]');
   });
 
-  function calcOffset(element: HTMLElement) {
-    const rect = element.getBoundingClientRect();
-    return rect.top + rect.height / 2;
-  }
-
   const offsetY = $derived.by(() => {
-    if (activeContainer) {
-      return calcOffset(activeContainer);
+    if (activeContainer && innerWidth > 0 && innerHeight > 0) {
+      const rect = activeContainer.getBoundingClientRect();
+      return rect.top + rect.height / 2 - 8; // the -8 is to center the indicator perfectly
     }
     return 0;
   });
@@ -102,6 +104,7 @@
   });
 </script>
 
+<svelte:window bind:innerWidth bind:innerHeight />
 <!-- Trigger button for the menu -->
 <Button class="static z-40" handleClick={openMenu}>Menu</Button>
 
@@ -114,41 +117,51 @@
 ></div>
 
 <div
-  class="fixed right-0 top-0 z-50 flex h-screen w-screen translate-x-full flex-col justify-between overflow-hidden bg-brand pt-[30px] lg:w-1/2 dark:bg-brand-d"
+  class="fixed right-0 top-0 z-50 flex h-screen w-screen translate-x-full flex-col justify-between overflow-hidden bg-brand pt-6 lg:w-2/3 2xl:w-1/2 dark:bg-brand-d"
   bind:this={menu}
 >
   <!-- active link indicators-->
   <div
     class="absolute left-0 top-0 -z-10 flex h-fit w-full items-center transition-transform"
     use:updateIndicator={() => offsetY}
-    class:hidden={offsetY <= 0}
   >
     <div
       bind:this={activeLinkDash}
-      class="h-3 w-6 -translate-x-full bg-surface dark:bg-surface-d"
+      class="h-3 w-1 -translate-x-full bg-surface nn:w-4 md:w-6 dark:bg-surface-d"
     ></div>
     <div
       bind:this={activeLinkPolygon}
-      class="pointer-events-none absolute -right-60 translate-x-1/2"
+      class="pointer-events-none absolute -right-12 translate-x-1/2 nn:-right-16 xs:-right-20 sm:-right-36 md:-right-44 lg:-right-24 xl:-right-40 2xl:-right-32"
     >
-      <Diamond class="h-96 fill-none stroke-surface dark:stroke-surface-d" />
+      <Diamond
+        class="h-24 fill-none stroke-surface nn:h-32 sm:h-60 md:h-72 lg:h-44 xl:h-60  dark:stroke-surface-d"
+      />
     </div>
   </div>
 
-  <div bind:this={menuContent} class="flex h-full flex-col justify-between opacity-0">
-    <div class="flex justify-between px-20">
+  <div
+    bind:this={menuContent}
+    class="flex h-full flex-col justify-between opacity-0"
+    class:container={!screenLg.matches}
+  >
+    <div class="flex justify-between lg:px-12 xl:px-16 2xl:px-20">
       <ToggleTheme />
       <Button class="[&>span]:text-primary" handleClick={closeMenu}>Close</Button>
     </div>
     <nav class="mt-20 flex flex-col gap-4" bind:this={navLinks}>
       {#each menuItems as item, i}
         <div
-          class="relative flex items-center border-primary px-20"
+          class="relative flex items-center border-primary lg:px-12 xl:px-16 2xl:px-20"
           data-active={$page.url.pathname === item.href ? 'true' : 'false'}
         >
           <a
             href={item.href}
-            class="text-[112px] font-bold uppercase leading-none tracking-wide text-primary"
+            class="text-5xl font-bold uppercase leading-none tracking-wide xs:text-7xl sm:text-8xl md:text-8xl 2xl:text-[116px] 2xl:tracking-wide {$page
+              .route.id === item.href
+              ? $mode === 'light'
+                ? 'active-fill'
+                : 'active-fill-d'
+              : 'text-primary'}"
             class:activeRoute={$page.route.id === item.href}
             onclick={closeMenu}
           >
@@ -158,7 +171,7 @@
       {/each}
     </nav>
     <div bind:this={footerElement} class="opacity-0">
-      <Footer class="*>text-xl px-20 text-primary" />
+      <Footer class="*>text-xl text-primary lg:px-12 xl:px-16 2xl:px-20" />
     </div>
   </div>
 </div>
@@ -167,7 +180,14 @@
   .activeRoute {
     -webkit-text-stroke-width: 3px;
     -webkit-text-stroke-color: theme(colors.primary);
-    -webkit-text-fill-color: transparent;
+  }
+
+  .active-fill {
+    -webkit-text-fill-color: theme(colors.brand);
+  }
+
+  .active-fill-d {
+    -webkit-text-fill-color: theme(colors.brand-d);
   }
 
   @media (width <= 768px) {
@@ -176,9 +196,9 @@
     }
   }
 
-  @media (width <= 360px) {
+  @media (width <= 460px) {
     .activeRoute {
-      -webkit-text-stroke-width: 1px;
+      -webkit-text-stroke-width: 1.5px;
     }
   }
 </style>
