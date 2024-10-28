@@ -57,7 +57,7 @@
     // Animation sequence
     tl.to(firstCurtain, {
       yPercent: 0,
-      duration: 0.5,
+      duration: 0.6,
       ease: 'power2.inOut'
     })
       .to(
@@ -79,7 +79,7 @@
       .to(secondCurtain, {
         scaleY: 0,
         yPercent: -100,
-        duration: 0.5,
+        duration: 0.3,
         ease: 'power2.in'
       })
       .set([firstCurtain, secondCurtain], {
@@ -96,18 +96,18 @@
   root
   options={{ smoothWheel: true, orientation: 'vertical', lerp: 0.1 }}
 >
+  <Navbar url={data.url} />
+
+  <div
+    class="bg-surface text-primary dark:bg-surface-d dark:text-primary-d"
+    in:fade={{ duration: 600 }}
+    out:fade={{ duration: 600 }}
+  >
+    {@render children()}
+  </div>
   {#key data.url}
-    <div
-      bind:this={transitionContainer}
-      class="bg-surface text-primary dark:bg-surface-d dark:text-primary-d"
-    >
-      <div in:fade={{ duration: 600, delay: 600 }} out:fade={{ duration: 600 }}>
-        <Navbar />
-        {@render children()}
-      </div>
-      <div bind:this={firstCurtain} class="bg-brand dark:bg-brand-d"></div>
-      <div bind:this={secondCurtain} class="bg-surface dark:bg-surface-d"></div>
-    </div>
+    <div bind:this={firstCurtain} class="bg-brand dark:bg-brand-d"></div>
+    <div bind:this={secondCurtain} class="bg-surface dark:bg-surface-d"></div>
   {/key}
 </ScrollContainer>
 

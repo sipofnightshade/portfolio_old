@@ -1,6 +1,5 @@
 <script lang="ts">
   import type { PageData } from './$types';
-
   import Projects from '$lib/components/LandingSections/Projects.svelte';
   import About from '$lib/components/LandingSections/About.svelte';
   import Hero from '$lib/components/LandingSections/Hero.svelte';
@@ -17,7 +16,7 @@
 
 <InfiniteScrollingBanner />
 
-<!-- <Projects /> -->
+<Projects />
 
 <Serivces />
 
