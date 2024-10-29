@@ -10,6 +10,7 @@
   import ShowBreakpoint from '$lib/components/ShowBreakpoint.svelte';
   import type { LayoutData } from './$types';
   import { fade } from 'svelte/transition';
+  import { verticalSlide } from '$lib/animations/veticalSlide';
 
   let { data, children }: { data: LayoutData; children: Snippet } = $props();
 
@@ -27,65 +28,6 @@
       gsap.ticker.remove(update);
     };
   });
-
-  // curtains animation
-  let transitionContainer: HTMLElement | null = $state(null);
-  let firstCurtain: HTMLElement | null = $state(null);
-  let secondCurtain: HTMLElement | null = $state(null);
-
-  /**
-   * @AnimationSequence
-   *  - Curtain 1 slides from y100 to -100
-   *  - Curtain 2 slides from y100 to -100, scaleY from 1 to 0
-   *  - Logo centered in the middle of the screen
-   */
-
-  $effect(() => {
-    const tl = gsap.timeline();
-
-    // Reset initial positions
-    gsap.set([firstCurtain, secondCurtain], {
-      yPercent: 100,
-      position: 'fixed',
-      left: 0,
-      right: 0,
-      bottom: 0,
-      top: 0,
-      zIndex: 99
-    });
-
-    // Animation sequence
-    tl.to(firstCurtain, {
-      yPercent: 0,
-      duration: 0.6,
-      ease: 'power2.inOut'
-    })
-      .to(
-        secondCurtain,
-        {
-          yPercent: 0,
-          duration: 0.5,
-          ease: 'power2.inOut'
-        },
-        '-=0.3'
-      ) // Start 0.4 seconds after first curtain
-      .to(firstCurtain, {
-        yPercent: -100,
-        duration: 0.2,
-        ease: 'power2.in',
-        stagger: 0.3
-      })
-
-      .to(secondCurtain, {
-        scaleY: 0,
-        yPercent: -100,
-        duration: 0.3,
-        ease: 'power2.in'
-      })
-      .set([firstCurtain, secondCurtain], {
-        yPercent: 100 // Reset for next transition
-      });
-  });
 </script>
 
 <ShowBreakpoint />
@@ -98,16 +40,25 @@
 >
   <Navbar url={data.url} />
 
-  <div
-    class="bg-surface text-primary dark:bg-surface-d dark:text-primary-d"
-    in:fade={{ duration: 600 }}
-    out:fade={{ duration: 600 }}
-  >
-    {@render children()}
-  </div>
   {#key data.url}
-    <div bind:this={firstCurtain} class="bg-brand dark:bg-brand-d"></div>
-    <div bind:this={secondCurtain} class="bg-surface dark:bg-surface-d"></div>
+    <div
+      class="bg-surface text-primary dark:bg-surface-d dark:text-primary-d"
+      in:fade={{ duration: 1200 }}
+      out:fade={{ duration: 600 }}
+    >
+      {@render children()}
+    </div>
+  {/key}
+
+  {#key data.url}
+    <div
+      class="fixed -bottom-[100vh] left-0 z-[998] h-screen w-screen bg-brand dark:bg-brand-d"
+      out:verticalSlide={{ duration: 500 }}
+    ></div>
+    <div
+      class="fixed -bottom-[100vh] left-0 z-[999] h-screen w-screen bg-surface dark:bg-surface-d"
+      out:verticalSlide={{ duration: 500, delay: 200 }}
+    ></div>
   {/key}
 </ScrollContainer>
 
