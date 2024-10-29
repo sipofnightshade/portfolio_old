@@ -40,15 +40,9 @@
 >
   <Navbar url={data.url} />
 
-  {#key data.url}
-    <div
-      class="bg-surface text-primary dark:bg-surface-d dark:text-primary-d"
-      in:fade={{ duration: 1200 }}
-      out:fade={{ duration: 600 }}
-    >
-      {@render children()}
-    </div>
-  {/key}
+  <div class="bg-surface text-primary dark:bg-surface-d dark:text-primary-d">
+    {@render children()}
+  </div>
 
   {#key data.url}
     <div
