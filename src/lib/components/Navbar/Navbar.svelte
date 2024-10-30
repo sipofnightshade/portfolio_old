@@ -36,7 +36,7 @@
 {#key url}
   <div
     id="navbar"
-    in:fade={{ duration: 600, delay: 1200 }}
+    in:fade={{ duration: 800, delay: 800 }}
     class="fixed top-0 z-30 flex w-full items-center justify-center"
   >
     <div
